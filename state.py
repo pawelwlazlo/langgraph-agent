@@ -6,5 +6,3 @@ from typing import TypedDict
 from pydantic import BaseModel
 
 
-class State(BaseModel):
-    messages: Annotated[list, add_messages]

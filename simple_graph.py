@@ -6,9 +6,11 @@ from langchain.chat_models import init_chat_model
 from pydantic import BaseModel, Field
 from typing_extensions import TypedDict
 
-from state import State
 
 load_dotenv()
+
+class State(BaseModel):
+    messages: Annotated[list, add_messages]
 
 llm = init_chat_model(
     "anthropic:claude-3-5-sonnet-latest"
